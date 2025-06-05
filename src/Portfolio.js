@@ -5,7 +5,6 @@ import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, Star, Code, Brain,
 const Portfolio = () => {
   const mountRef = useRef(null);
   const starsRef = useRef([]);
-  const [currentSection, setCurrentSection] = useState('hero');
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Card flip state
@@ -139,7 +138,11 @@ const Portfolio = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
       clearInterval(shootingInterval);
-      if (mountRef.current && renderer.domElement) {
+      if (
+        mountRef.current &&
+        renderer.domElement &&
+        mountRef.current.contains(renderer.domElement)
+      ) {
         mountRef.current.removeChild(renderer.domElement);
       }
       renderer.dispose();
@@ -222,7 +225,7 @@ const Portfolio = () => {
   );
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-gray-900 via-blue-900 to-black overflow-x-hidden">
+    <div className="relative min-h-screen bg-gradient-to-b from-gray-900 via-blue-900 to-black overflow-x-hidden scroll-smooth">
       {/* Three.js Background */}
       <div ref={mountRef} className="fixed inset-0 z-0" />
 
@@ -240,14 +243,14 @@ const Portfolio = () => {
             </div>
             <div className="flex space-x-6">
               {['About', 'Skills', 'Projects', 'Contact'].map((item) => (
-                <button
+                <a
                   key={item}
-                  onClick={() => setCurrentSection(item.toLowerCase())}
+                  href={`#${item.toLowerCase()}`}
                   className="text-white/80 hover:text-cyan-400 transition-colors duration-200 
                            hover:scale-105 transform font-medium"
                 >
                   {item}
-                </button>
+                </a>
               ))}
             </div>
           </div>
@@ -258,10 +261,10 @@ const Portfolio = () => {
       <section className="relative z-10 min-h-screen flex items-center justify-center text-center px-6">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8 relative">
-            <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 relative z-10">
-              BHARATH
-              <span className="block text-4xl md:text-6xl text-cyan-400 font-light">
-                AI/ML Developer
+            <h1 className="text-6xl md:text-6xl font-bold text-white mb-4 relative z-10">
+              BHARATH M
+              <span className="block text-3xl md:text-4xl text-cyan-400 font-light">
+                Python & AI/ML Developer
               </span>
             </h1>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 
@@ -282,14 +285,15 @@ const Portfolio = () => {
               <Mail size={20} />
               <span>Get In Touch</span>
             </a>
-            <button
-              onClick={() => window.open('https://github.com/BBopanna03', '_blank')}
-              className="flex items-center space-x-2 bg-cyan-500/20 backdrop-blur-md px-6 py-3 
-                         rounded-full hover:bg-cyan-500/30 transition-all duration-300 text-cyan-400
-                         hover:scale-105 transform border border-cyan-400/30">
-              <Github size={20} />
-              <span>View More Projects</span>
-            </button>
+            <a
+  href="#projects"
+  className="flex items-center space-x-2 bg-cyan-500/20 backdrop-blur-md px-6 py-3 
+             rounded-full hover:bg-cyan-500/30 transition-all duration-300 text-cyan-400
+             hover:scale-105 transform border border-cyan-400/30"
+>
+  <Github size={20} />
+  <span>View Projects</span>
+</a>
           </div>
 
           <div className="flex justify-center space-x-6 text-white/60">
@@ -306,7 +310,7 @@ const Portfolio = () => {
       </section>
 
       {/* About Section */}
-      <section className="relative z-10 py-20 px-6">
+      <section id="about" className="relative z-10 py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-white mb-6">
@@ -362,8 +366,8 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Skills Section - Redesigned with Flip Cards */}
-      <section className="relative z-10 py-20 px-6">
+      {/* Skills Section */}
+      <section id="skills" className="relative z-10 py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-white mb-6">
@@ -447,7 +451,7 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="relative z-10 py-20 px-6">
+      <section id="projects" className="relative z-10 py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-white mb-6">
@@ -512,7 +516,7 @@ const Portfolio = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="relative z-10 py-20 px-6">
+      <section id="contact" className="relative z-10 py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-white mb-6">
