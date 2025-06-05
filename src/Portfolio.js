@@ -299,12 +299,12 @@ const Portfolio = () => {
           <div className="flex justify-center space-x-6 text-white/60">
             <div className="flex items-center space-x-2">
               <MapPin size={16} />
-              <span>Mysuru, Karnataka</span>
+              <span>Bengaluru, Karnataka</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <Phone size={16} />
-              <span>+91 861-842-4132</span>
-            </div>
+            {/* <div className="flex items-center space-x-2"> */}
+              {/* <Phone size={16} /> */}
+              {/* <span>+91 861-842-4132</span> */}
+            {/* </div> */}
           </div>
         </div>
       </section>
