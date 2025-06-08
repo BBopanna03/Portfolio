@@ -160,8 +160,8 @@ const Portfolio = () => {
       'LLM Integration', 'Ollama'
     ],
     'Web & Development': [
-      'Flask', 'Django', 'REST API', 'MySQL',
-      'Git', 'VS Code', 'Jupyter'
+      'Django', 'REST API', 'MySQL',
+      'Git', 'Jupyter'
     ],
     'Programming Languages': [
       'Python', 'Java', 'C'
@@ -258,40 +258,39 @@ const Portfolio = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative z-10 min-h-screen flex items-center justify-center text-center px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-8 relative">
-            <h1 className="text-6xl md:text-6xl font-bold text-white mb-4 relative z-10">
+      <section className="relative z-10 min-h-screen flex items-center justify-center text-center px-4">
+        <div className="max-w-3xl mx-auto">
+          <div className="mb-6 relative">
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-white mb-3 relative z-10">
               BHARATH M
-              <span className="block text-3xl md:text-4xl text-cyan-400 font-light">
+              <span className="block text-lg sm:text-2xl md:text-2xl text-cyan-400 font-light">
                 Python & AI/ML Developer
               </span>
             </h1>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 
-                            blur-3xl rounded-full transform scale-150" />
+                            blur-3xl rounded-full transform scale-125" />
           </div>
 
-          <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
-            Crafting intelligent solutions with Computer Vision, NLP, and LLM integration.
-            <br />
-            <span className="text-cyan-400">Building the future, one algorithm at a time.</span>
+          <p className="text-base sm:text-lg md:text-2xl text-white/80 mb-3 leading-snug">
+            <span className="text-white">Building the future, one algorithm at a time!</span>
           </p>
 
-          <div className="flex flex-wrap justify-center gap-6 mb-12">
-            <a href="mailto:bharathmanjunath03@gmail.com"
-              className="flex items-center space-x-2 bg-white/10 backdrop-blur-md px-6 py-3 
+          <div className="flex flex-wrap justify-center gap-4 mb-10">
+            <a 
+              href="mailto:bharathmanjunath03@gmail.com"
+              className="flex items-center space-x-2 bg-white/10 backdrop-blur-md px-5 py-2.5 
                           rounded-full hover:bg-white/20 transition-all duration-300 text-white
                           hover:scale-105 transform border border-white/20">
-              <Mail size={20} />
+              <Mail size={18} />
               <span>Get In Touch</span>
             </a>
             <a
   href="#projects"
-  className="flex items-center space-x-2 bg-cyan-500/20 backdrop-blur-md px-6 py-3 
+  className="flex items-center space-x-2 bg-cyan-500/20 backdrop-blur-md px-5 py-2.5 
              rounded-full hover:bg-cyan-500/30 transition-all duration-300 text-cyan-400
              hover:scale-105 transform border border-cyan-400/30"
 >
-  <Github size={20} />
+  <Github size={18} />
   <span>View Projects</span>
 </a>
           </div>
