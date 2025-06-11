@@ -239,7 +239,7 @@ const Portfolio = () => {
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <div className="text-2xl font-bold text-white">
-              Bharath<span className="text-cyan-400">.dev</span>
+              Bharath Bopanna<span className="text-cyan-400">.dev</span>
             </div>
             <div className="flex space-x-6">
               {['About', 'Skills', 'Projects', 'Contact'].map((item) => (
